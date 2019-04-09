@@ -57,7 +57,8 @@ FreeDraw.onMouseUp = function (state, e){
 }
 
 FreeDraw.onTouchEnd = function(state, e) {
-    this.onMouseUp(state, e)
+    this.fireUpdate();
+    this.changeMode(Constants.modes.SIMPLE_SELECT, { featureIds: [state.polygon.id] });
 }
 
 FreeDraw.fireUpdate = function() {
